@@ -1,10 +1,21 @@
 import React from 'react';
+import { Global, css } from '@emotion/core'
+
+import Header from './components/Header';
 
 function App() {
   return (
-    <div className="App">
-      Hola Mundo
-    </div>
+    <>
+      <Global
+        styles={css`
+          body {
+            margin: 0;
+            box-sizing: content-box;
+          }
+        `}
+      />
+      <Header />
+    </>
   );
 };
 
