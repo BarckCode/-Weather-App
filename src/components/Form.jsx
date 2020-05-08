@@ -50,12 +50,12 @@ const Button = styled.button`
   transition: 0.5s ease;
   cursor: pointer;
   color: #eff3c6;
-  background-color: #eb6383;
+  background-color: #0779e4;
 
 
   &:hover {
     transition: 0.5s ease;
-    background-color: #0779e4;
+    background-color: #3e206d;
   }
 `;
 
@@ -63,6 +63,7 @@ const Form = ({ inputForm, setInputForm, setButtonSubmit }) => {
 
   const { city, country } = inputForm
 
+  //Form Validation Status
   const [error, setError] = useState(false)
 
   //Read Input of Form and save the State App
@@ -92,7 +93,7 @@ const Form = ({ inputForm, setInputForm, setButtonSubmit }) => {
     <FormContainer
       onSubmit={handleSubmit}
     >
-      {error ? <Error message='Debe rellenar los campos'/> : null}
+      {error ? <Error message='Datos incorrectos'/> : null}
       <Label>Ciudad:</Label>
         <Input
           type='text'
