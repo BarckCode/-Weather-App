@@ -41,7 +41,7 @@ const App = () => {
       if(buttonSubmit) {
         const { city, country } = inputForm
         const apiKey = 'ce1bddd595a612a3eaf37041a313e5ce'
-        const API = `http://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&appid=${apiKey}`
+        const API = `https://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&appid=${apiKey}`
 
         const response = await fetch(API)
         const data = await response.json()
