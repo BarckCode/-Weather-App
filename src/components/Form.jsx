@@ -6,12 +6,12 @@ import Error from './Error'
 const FormContainer = styled.form`
   width: 90%;
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 0 auto 2rem auto;
   padding: 2rem;
   text-align: center;
   border-radius: 0.5rem;
-  background-color: #4cbbb9;
-  color: #eff3c6;
+  background-color: #916dd5;
+  color: #fff;
 `;
 
 const Label = styled.label`
@@ -32,13 +32,13 @@ const Input = styled.input`
   padding: 0.75rem;
   border-radius: 0.5rem;
   font-size: 1rem;
-  background-color: #eff3c6;
+  background-color: #fff;
 `;
 
 const Select = styled.select`
   display: block;
   font-size: 1rem;
-  background-color: #eff3c6;
+  background-color: #fff;
 `;
 
 const Button = styled.button`
@@ -49,7 +49,7 @@ const Button = styled.button`
   font-weight: 600;
   transition: 0.5s ease;
   cursor: pointer;
-  color: #eff3c6;
+  color: #fff;
   background-color: #0779e4;
 
 
@@ -93,7 +93,7 @@ const Form = ({ inputForm, setInputForm, setButtonSubmit }) => {
     <FormContainer
       onSubmit={handleSubmit}
     >
-      {error ? <Error message='Datos incorrectos'/> : null}
+      {error ? <Error message='Todos los campos son obligatorios'/> : null}
       <Label>Ciudad:</Label>
         <Input
           type='text'
@@ -111,21 +111,21 @@ const Form = ({ inputForm, setInputForm, setButtonSubmit }) => {
           onChange={handleChange}
         >
           <option value=''>-- Selecciona --</option>
-          <option value='es'>España</option>
-          <option value='pt'>Portugal</option>
           <option value='de'>Alemania</option>
-          <option value='fr'>Francia</option>
-          <option value='us'>Estados Unidos</option>
-          <option value='cu'>Colombia</option>
-          <option value='ex'>Ecuador</option>
-          <option value='pe'>Perú</option>
-          <option value='ve'>Venezuela</option>
           <option value='ar'>Argentina</option>
           <option value='br'>Brasil</option>
-          <option value='py'>Paraguay</option>
           <option value='cl'>Chile</option>
-          <option value='mx'>México</option>
+          <option value='co'>Colombia</option>
           <option value='cr'>Costa Rica</option>
+          <option value='ec'>Ecuador</option>
+          <option value='es'>España</option>
+          <option value='us'>Estados Unidos</option>
+          <option value='fr'>Francia</option>
+          <option value='mx'>México</option>
+          <option value='py'>Paraguay</option>
+          <option value='pe'>Perú</option>
+          <option value='pt'>Portugal</option>
+          <option value='ve'>Venezuela</option>
         </Select>
 
       <Button type='submit'>Consultar</Button>

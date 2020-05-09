@@ -1,10 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import { Global, css } from '@emotion/core'
+import styled from '@emotion/styled'
 
 import Header from './components/Header'
 import Form from './components/Form'
 import Weather from './components/Weather'
 import Error from './components/Error'
+
+const SectionData = styled.section`
+  color: #fff;
+  text-align: center;
+`;
+
 
 const App = () => {
 
@@ -18,7 +25,13 @@ const App = () => {
   const [buttonSubmit, setButtonSubmit] = useState(false)
 
   //API Data State
-  const [dataStatus, setDataStatus] = useState({})
+  const [dataStatus, setDataStatus] = useState({
+    cod: "",
+    list: [],
+    city: {
+      name: "",
+    },
+  })
 
   //API Data Status Error
   const [error, setError] = useState(false)
@@ -50,7 +63,7 @@ const App = () => {
   error ?
     weatherComponent = <Error message='Datos incorrectos' />
     :
-    weatherComponent = <Weather dataStatus={dataStatus.length === 0 ? null : dataStatus} />
+    weatherComponent = <Weather dataStatus={dataStatus} />
 
   return (
     <>
@@ -63,19 +76,19 @@ const App = () => {
           }
 
           body {
-            background-color: #eff3c6;
+            background-color: #fff;
           }
         `}
       />
       <Header />
+      <SectionData>
+        {weatherComponent}
+      </SectionData>
       <Form
         inputForm={inputForm}
         setInputForm={setInputForm}
         setButtonSubmit={setButtonSubmit}
       />
-      <section>
-        {weatherComponent}
-      </section>
     </>
   )
 }

@@ -7,7 +7,7 @@ const Hero = styled.header`
   margin-bottom: 4rem;
   text-align: center;
   position: relative;
-  background-color: #4cbbb9;
+  background-color: #916dd5;
 `;
 
 const Wave = styled.div`
@@ -15,7 +15,7 @@ const Wave = styled.div`
   height: 60px;
   position: absolute;
   bottom: 0;
-  background-color: #4cbbb9;
+  background-color: #916dd5;
 
 
   &::before{
@@ -37,7 +37,7 @@ const Wave = styled.div`
     height: 109%;
     right: 0;
     top: 63%;
-    background-color: #eff3c6;
+    background-color: #fff;
   }
 
   &::after {
@@ -45,7 +45,7 @@ const Wave = styled.div`
     height: 100%;
     left: 0;
     top: 32%;
-    background-color: #4cbbb9;
+    background-color: #916dd5;
   }
 `;
 
@@ -53,7 +53,7 @@ const TitleHeader = styled.h1`
   margin: 0;
   padding-top: 2.5rem;
   font-size: 2.5rem;
-  color: #eff3c6;
+  color: #fff;
 `;
 
 const Header = () => {
