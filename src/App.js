@@ -6,12 +6,12 @@ import Header from './components/Header'
 import Form from './components/Form'
 import Weather from './components/Weather'
 import Error from './components/Error'
+import Loading from './components/LoadingComponents/Loading'
 
 const SectionData = styled.section`
   color: #fff;
   text-align: center;
 `;
-
 
 const App = () => {
 
@@ -23,6 +23,9 @@ const App = () => {
 
   //State Button Submit of form
   const [buttonSubmit, setButtonSubmit] = useState(false)
+
+    //Loading Status
+    const [loading, setLoading] = useState(false)
 
   //API Data State
   const [dataStatus, setDataStatus] = useState({
@@ -36,6 +39,7 @@ const App = () => {
   //API Data Status Error
   const [error, setError] = useState(false)
 
+  //Get Data of API
   useEffect(() => {
     const consultAPI = async () => {
       if(buttonSubmit) {
@@ -48,6 +52,7 @@ const App = () => {
 
         setDataStatus(data)
         setButtonSubmit(false)
+        setLoading(false)
 
         if (dataStatus.cod === '404'){
           setError(true)
@@ -82,12 +87,13 @@ const App = () => {
       />
       <Header />
       <SectionData>
-        {weatherComponent}
+        {loading ? <Loading /> : weatherComponent}
       </SectionData>
       <Form
         inputForm={inputForm}
         setInputForm={setInputForm}
         setButtonSubmit={setButtonSubmit}
+        setLoading={setLoading}
       />
     </>
   )

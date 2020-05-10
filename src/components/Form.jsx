@@ -59,7 +59,7 @@ const Button = styled.button`
   }
 `;
 
-const Form = ({ inputForm, setInputForm, setButtonSubmit }) => {
+const Form = ({ inputForm, setInputForm, setButtonSubmit, setLoading }) => {
 
   const { city, country } = inputForm
 
@@ -87,6 +87,7 @@ const Form = ({ inputForm, setInputForm, setButtonSubmit }) => {
 
     //Save the State App
     setButtonSubmit(true)
+    setLoading(true)
   }
 
   return (

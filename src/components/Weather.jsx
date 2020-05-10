@@ -65,11 +65,6 @@ const Weather = ({ dataStatus }) => {
         temp: 0,
         humidity: 0,
       },
-      weather: [
-        {
-          main: "",
-        },
-      ],
       clouds: {
         all: 0,
       },
@@ -91,7 +86,6 @@ const Weather = ({ dataStatus }) => {
   let name
   let temp
   let humidity
-  let weather //Testeando
   let clouds
   let wind
   let date
@@ -112,7 +106,6 @@ const Weather = ({ dataStatus }) => {
       // parseFloat(Parseamos estos datos a punto flotante).toFixed(Indicamos el Nº de decimales)
       temp = parseFloat(dataList.main.temp - 273.15).toFixed(2)
       humidity = dataList.main.humidity
-      dataList.weather.forEach(clime => weather = clime.main)
       clouds = dataList.clouds.all
       //Velocidad en metros/segundo. Para pasar a km/hora. Formula: 1 metro/seg = 3,6 km/h
       wind = parseFloat(dataList.wind.speed * 3,6).toFixed(0)
@@ -128,7 +121,6 @@ const Weather = ({ dataStatus }) => {
       <ContainerData>
         <h3>{name}</h3>
         <Paragraph>{temp}<span>&#x2103;</span></Paragraph>
-        <Paragraph>{weather}</Paragraph>
         <div>
           <SpanContainer>
             <SpanImage src={humidityImage} alt='Humidity'/>
