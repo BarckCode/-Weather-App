@@ -6,7 +6,7 @@ import Header from './components/Header'
 import Form from './components/Form'
 import Weather from './components/Weather'
 import Error from './components/Error'
-import Loading from './components/LoadingComponents/Loading'
+import Loading from './components/Loading'
 
 const SectionData = styled.section`
   color: #fff;
@@ -24,8 +24,8 @@ const App = () => {
   //State Button Submit of form
   const [buttonSubmit, setButtonSubmit] = useState(false)
 
-    //Loading Status
-    const [loading, setLoading] = useState(false)
+  //Loading Status
+  const [loading, setLoading] = useState(false)
 
   //API Data State
   const [dataStatus, setDataStatus] = useState({
